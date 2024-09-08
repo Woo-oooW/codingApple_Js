@@ -11,10 +11,6 @@
 </head>
 
 <body>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
-  integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
-  crossorigin="anonymous"></script>
 <script src="https://code.jquery.com/jquery-3.7.1.min.js"
   integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
   
@@ -37,6 +33,9 @@
   </ul>
   <button class="modalbtn">로그인</button>
   
+
+  
+
   
   <div class="modal" tabindex="-1">
     <form>
@@ -70,9 +69,7 @@
 
 
 
-  <div class="alert alert-danger" id="cnt">
-    5초 이내 구매시 사은품 증정!
-  </div>
+
 
   
 
@@ -89,13 +86,24 @@
       </div>
     </div>
  </div> 
-
+ <div class="alert alert-danger" id="cnt">
+  5초 이내 구매시 사은품 증정!
+</div> 
  <button class="slide-1">1</button>
  <button class="slide-2">2</button>
  <button class="slide-3">3</button>
 
 
-
+ <div class= "textC" style="width: 300px; height:200px;overflow-y : scroll">
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi reiciendis impedit ullam a aut nostrum quisquam repellendus praesentium optio officiis incidunt officia aperiam explicabo voluptas ipsa, consequatur quia quaerat velit!
+  Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptatem deserunt fugiat recusandae, ut possimus harum nostrum ipsum maxime atque sapiente enim numquam veniam aliquam officiis consequatur rerum modi facilis dolore.
+  Lorem ipsum dolor sit, amet consectetur adipisicing elit. Doloremque quam quidem deserunt sint itaque expedita ducimus at iste laboriosam iusto. Laboriosam, sed qui eaque delectus hic assumenda rerum nisi a.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Provident ex expedita, alias odio velit architecto eum animi culpa, inventore cumque similique ipsa, neque porro accusantium obcaecati eveniet. Laudantium, itaque delectus.
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Exercitationem et voluptas a itaque ex quis doloribus magnam dolorem. Quo eum nobis neque fugiat mollitia eligendi quas placeat nihil qui autem.
+  Lorem ipsum dolor sit amet consectetur, adipisicing elit. Expedita, nesciunt id ad maxime iusto ipsa aut sint recusandae veritatis! Fugiat facere reprehenderit doloremque quas commodi nisi veritatis magni beatae repellat?
+  Lorem ipsum dolor sit amet consectetur adipisicing elit. Fugit perferendis odit placeat vitae. Quaerat eos est inventore cupiditate facere ipsa, tempore nisi velit atque non nobis odit itaque odio? Corrupti!
+ </div>
+ <div style="height:1000px"></div>
 
 
 
@@ -146,11 +154,6 @@
         });
       });
 
-
-    
-
-
-
     var timer = setInterval(function () {
       T()
     }, 1000);
@@ -165,6 +168,34 @@
       Tsec = Tsec - 1;
 
     }
+    $('.textC').on('scroll',function(){
+      var a = document.querySelector('.textC').scrollTop;
+
+      
+      var b = document.querySelector('.textC').clientHeight
+
+      var textCheight = document.querySelector('.textC').scrollHeight;
+      
+      console.log(a, b, textCheight);
+
+      if(a+b > textCheight - 50)
+      {
+        alert("도착");
+      }
+      
+    })
+    
+
+    window.addEventListener('scroll', function() {
+      if(window.scrollY > 200)
+      {
+      $('.navbar-brand').css('font-size', `10px`);
+      }
+      else
+      {
+        $('.navbar-brand').css('font-size', `30px`);
+      }
+    })
 
 
   </script>
