@@ -31,41 +31,41 @@
     <li class="list-group-item">A fourth item</li>
     <li class="list-group-item">And a fifth one</li>
   </ul>
-  <button class="modalbtn">로그인</button>
+
+  
   
 
   
 
   
-  <div class="modal" tabindex="-1">
-    <form>
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title">Modal title</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <p>Modal body text goes here.</p>
-          
-          <div class="member_login_input">
-            <input type="text" name="username" placeholder="아이디" >
-        </div>
+  <div class="black-bg">
+    <div class="white-bg">
+        <form>
+            <div class="modal-header">
+              <h5 class="modal-title">로그인하세요</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <p>로그인강요</p>
+              
+              <div class="member_login_input">
+                <input type="text" name="username" placeholder="아이디" >
+            </div>
 
-        <div class="member_login_input">
-            <input type="password" name="password" placeholder="비밀번호">
-        </div>
+            <div class="member_login_input">
+                <input type="password" name="password" placeholder="비밀번호">
+            </div>
 
-        </div>
-        <div class="modal-footer">
-          <input type="submit" class="btn btn-secondary" id="btn-login" value="로그인">
-          <input type="button" class="btn btn-secondary" value="회원가입" onclick="location.href='/member/join'">
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
+            </div>
+            <div class="modal-footer">
+              <input type="submit" class="btn btn-secondary" id="btn-login" value="로그인">
+              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+            </div>
+
+      </form>
       </div>
     </div>
-  </form>
-  </div>
+
 
 
 
@@ -73,7 +73,7 @@
 
   
 
-  <div style="overflow: hidden">
+
     <div class="slide-container">
       <div class="slide-box">
         <img src="car1.png">
@@ -85,10 +85,14 @@
         <img src="car3.png">
       </div>
     </div>
- </div> 
+
+
+    <button class="modalbtn">로그인</button>
+
  <div class="alert alert-danger" id="cnt">
   5초 이내 구매시 사은품 증정!
 </div> 
+
  <button class="slide-1">1</button>
  <button class="slide-2">2</button>
  <button class="slide-3">3</button>
@@ -120,17 +124,32 @@
       $('.list-group').toggleClass('show');
     });
 
+
+
     $('.modalbtn').on('click', function () {
-      $('.modal').toggleClass('show');
+      $('.black-bg').toggleClass('show');
     });
 
     $('.btn-close').on('click', function () {
-      $('.modal').removeClass('show');
+      $('.black-bg').removeClass('show');
+    });
+
+    document.querySelector('.black-bg').addEventListener('click',function(e){
+      if(e.target == document.querySelector('.black-bg'))
+      {
+        $('.black-bg').removeClass('show');
+      }
+      
     });
 
     $('.btn-secondary').on('click', function () {
-      $('.modal').removeClass('show');
+      $('.black-bg').removeClass('show');
     });
+
+    
+
+
+
 
     $('.badge').on('click', function () {
 
@@ -186,14 +205,14 @@
     })
     
 
-    window.addEventListener('scroll', function() {
+    window.addEventListener('scroll', function(  ) {
       if(window.scrollY > 200)
       {
       $('.navbar-brand').css('font-size', `10px`);
       }
       else
       {
-        $('.navbar-brand').css('font-size', `30px`);
+        $('.navbar-brand').css('font-size', `10px`);
       }
     })
 
