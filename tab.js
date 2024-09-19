@@ -7,7 +7,7 @@ for (let i = 0; i <(document.querySelectorAll('.tab-button').length); i++){
       $('.tab-content').eq(i).addClass('show');
     })
 
-    // 바닐라
+    // 바닐라로 변환한다면?
     // document.querySelectorAll('.tab-button')[i].addEventListener('click',
     //     function(){
     //         document.querySelectorAll('.tab-button').forEach(element => {
