@@ -16,13 +16,11 @@
   <div class="container">
     <div class="row">
   
-
-        
-  
     </div>
   </div> 
   
   <button onclick="t()">가격순 정렬</button>
+
       <script>
       // 상품명 다나가순 정렬
       // 6만원 이하 상품만 보기 정렬
@@ -32,9 +30,9 @@
           { id : 2, price : 60000, title : 'Black Monastery' }
         ];
 
-        var testarray = [7,3,5,1,4,8];
 
         function t() {
+        $('.row').empty();
         products.sort(function(a,b){
           return a.price - b.price;
         });
@@ -45,16 +43,11 @@
           <img src="https://via.placeholder.com/600" class="w-100">
           <h5>${products[i].title}</h5>
           <p>가격 : ${products[i].price}</p>
+          <button class="buy" onclick="tt(${i})">구매</button>
         </div>
         `);
         }
       }
-
-
-        
-        
-
-
 
         for(i=0;i<products.length;i++){
           $('.row').append(
@@ -62,10 +55,41 @@
           <img src="https://via.placeholder.com/600" class="w-100">
           <h5>${products[i].title}</h5>
           <p>가격 : ${products[i].price}</p>
+          <button class="buy" onclick="tt(${i})">구매</button>
         </div>
         `);
         }
-            
+
+
+        function tt(i){
+          var arr=[];
+
+        if(isNaN(localStorage.getItem("cart")))
+        {
+          arr = JSON.parse(localStorage.getItem("cart"));
+          for(var y=0;y<arr.length;y++)
+          {
+            if(products[i].title == arr[y])
+            {
+            alert("이미있음");
+            return;
+            }
+          }
+          arr.push(products[i].title);
+          localStorage.setItem("cart",JSON.stringify(arr));
+        }
+        else
+        {
+          if(products[i].title == arr[y])
+            {
+            alert("이미있음");
+            return;
+            }
+          arr.push(products[i].title);
+          localStorage.setItem("cart",JSON.stringify(arr));
+        }
+
+      }
           
       </script> 
 

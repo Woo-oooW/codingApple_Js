@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="list">장바구니페이지</div>
+    
+
+
+    <script>
+        var arr = localStorage.getItem("cart");
+        newArr = JSON.parse(arr);
+        console.log(newArr);
+        
+        for(var i=0; i<newArr.length; i++)
+        {
+            document.querySelector('.list').append(newArr[i]);
+        }
+
+        
+
+        
+    </script>
+</body>
+</html>
